@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" height="24px" width="24px" type="image/x-icon" href="images/Election-commission-L.png">
+      <title>Election Commission</title>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+      <!-- <link rel="stylesheet" href="styles.css"> -->
+      <style>
+            body {
+                  font-family: 'Open Sans', sans-serif;
+                  margin: 0;
+                  padding: 0;
+            }
+
+            header {
+                  background-color: #00427d;
+                  color: white;
+            }
+
+            .navbar {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  padding: 10px 20px;
+            }
+
+            .menu-icon {
+                  font-family: 'Roboto', sans-serif;
+                  display: flex;
+                  align-items: center;
+                  padding-left: 4rem;
+            }
+
+            .menu-icon .icon {
+                  font-size: 24px;
+                  margin-right: 10px;
+                  cursor: pointer;
+            }
+
+            .menu-icon .icon:hover {
+                  background-color: rgba(0, 0, 0, 0.441);
+            }
+
+            .nav-items {
+                  display: flex;
+                  align-items: center;
+            }
+
+            .nav-items a,
+            .nav-items button {
+                  color: white;
+                  text-decoration: none;
+                  margin-left: 15px;
+                  font-size: 14px;
+            }
+
+            .nav-items .social-icons {
+                  font-size: 18px;
+                  color: #ffffffb9;
+            }
+
+            .social-icons:hover {
+                  color: #fff;
+            }
+
+            .tet {
+                  color: #ffffffb9;
+                  cursor: pointer;
+            }
+
+            .tet:hover {
+                  color: #fff;
+            }
+
+            .text-size,
+            .language {
+                  background-color: #ff4081;
+                  border: none;
+                  color: white;
+                  padding: 5px 10px;
+                  cursor: pointer;
+                  font-size: 14px;
+                  margin-left: 10px;
+            }
+
+            .text-size {
+                  background-color: #ccc;
+                  color: black;
+            }
+
+            .language {
+                  background-color: #ff4081;
+            }
+
+            .language:hover,
+            .text-size:hover {
+                  opacity: 0.8;
+            }
+
+            .banner {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  padding: 0;
+                  background-color: white;
+                  border-bottom: 2px solid #ff4081;
+                  margin: 0;
+            }
+
+
+            .logo-section {
+                  display: flex;
+                  align-items: center;
+            }
+
+            .logo-section img {
+                  max-width: 75%;
+                  /* margin-right: 10px; */
+            }
+
+            /* .text-section {
+                  display: flex;
+                  flex-direction: column;
+            }
+
+            .hindi-text {
+                  font-size: 20px;
+                  font-weight: 700;
+            }
+
+            .english-text {
+                  font-size: 16px;
+                  font-weight: 400;
+            } */
+
+            .search-section .search-button {
+                  background-color: #ff4081;
+                  border: none;
+                  color: white;
+                  padding: 10px;
+                  font-size: 18px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  padding-right: 10px;
+            }
+
+            .search-section .search-button i {
+                  font-size: 18px;
+
+            }
+
+            .search-section .search-button:hover {
+                  opacity: 0.8;
+            }
+
+            /* body {
+                  font-family: 'Arial', sans-serif;
+                  margin: 0;
+                  padding: 0;
+                  background-color: #f8f8f8;
+            } */
+
+            .info-container {
+                  display: flex;
+                  justify-content: space-between;
+                  /* padding: 20px; */
+                  background-color: #fff;
+                  border-top: 5px solid #ff4081;
+            }
+
+            .info-box {
+                  display: flex;
+                  align-items: center;
+                  width: 18%;
+                  padding: 10px;
+                  background-color: #ffe6f2;
+                  color: #d80073;
+                  text-align: center;
+                  border-radius: 8px;
+                  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+            }
+
+            .info-box i {
+                  font-size: 16px;
+                  margin-right: 3px;
+                  padding-left: 3rem;
+            }
+
+            .info-box span {
+                  font-size: 14px;
+                  font-weight: bold;
+            }
+
+            /* this is new diff part */
+            .timeline {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  width: 100%;
+                  padding: 20px;
+            }
+
+            .timeline-item {
+                  text-align: center;
+                  /* position: relative; */
+                  flex: 1;
+                  margin: 0 10px;
+            }
+
+            .timeline-item .icon-circle {
+                  width: 100px;
+                  height: 100px;
+                  background-color: #fff;
+                  border-radius: 50%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin: 0 auto 10px;
+                  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            }
+
+            .timeline-item img {
+                  width: 60px;
+                  height: 60px;
+            }
+
+            .timeline-item h3 {
+                  font-size: 16px;
+                  margin: 0;
+            }
+
+            .timeline-item::after {
+                  content: '';
+                  position: absolute;
+                  width: 100%;
+                  height: 4px;
+                  background-color: #ddd;
+                  top: 50%;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  z-index: -1;
+            }
+
+            .timeline-item:first-child::after {
+                  left: 50%;
+                  width: 50%;
+            }
+
+            .timeline-item:last-child::after {
+                  left: 0;
+                  width: 50%;
+            }
+
+            .timeline-item .arrow-down {
+                  width: 0;
+                  height: 0;
+                  border-left: 10px solid transparent;
+                  border-right: 10px solid transparent;
+                  border-top: 10px solid #000;
+                  margin: 10px auto 0;
+            }
+
+            /* .container {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  padding: 20px;
+            }
+
+            .commission-section {
+                  width: 25%;
+                  background-color: #fff;
+                  padding: 20px;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .commission-section h2 {
+                  text-align: center;
+                  font-size: 18px;
+                  color: #333;
+                  margin-bottom: 20px;
+                  position: relative;
+            }
+
+            .commission-section h2::after {
+                  content: '';
+                  width: 60px;
+                  height: 2px;
+                  background-color: #c0392b;
+                  display: block;
+                  margin: 10px auto 0;
+            }
+
+            .commissioner {
+                  display: flex;
+                  margin-bottom: 20px;
+            }
+
+            .commissioner img {
+                  width: 80px;
+                  height: 100px;
+                  object-fit: cover;
+                  margin-right: 10px;
+            }
+
+            .commissioner .info h3 {
+                  font-size: 16px;
+                  margin: 0 0 5px 0;
+            }
+
+            .commissioner .info p {
+                  margin: 0;
+                  color: #666;
+            }
+
+            .gallery-section {
+                  display: flex;
+                  flex-direction: column;
+                  width: 70%;
+            }
+
+            .photo-gallery,
+            .video-gallery {
+                  background-color: #fff;
+                  padding: 20px;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                  margin-bottom: 20px;
+            }
+
+            .photo-gallery h2,
+            .video-gallery h2 {
+                  font-size: 18px;
+                  color: #333;
+                  margin-bottom: 20px;
+                  position: relative;
+            }
+
+            .photo-gallery h2::after,
+            .video-gallery h2::after {
+                  content: '';
+                  width: 60px;
+                  height: 2px;
+                  background-color: #8e44ad;
+                  display: block;
+                  margin: 10px auto 0;
+            }
+
+            .photos {
+                  display: grid;
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 10px;
+                  margin-bottom: 20px;
+            }
+
+            .photos img {
+                  width: 100%;
+                  height: auto;
+            }
+
+            .gallery-link {
+                  display: block;
+                  text-align: center;
+                  padding: 10px;
+                  background-color: #2c3e50;
+                  color: #fff;
+                  text-decoration: none;
+                  border-radius: 5px;
+                  margin-top: 10px;
+            }
+
+            .gallery-link:hover {
+                  background-color: #34495e;
+            } */
+
+            .container {
+                  width: 80%;
+                  margin: 0 auto;
+                  padding: 20px;
+                  background-color: #e7f0ff;
+                  border-radius: 8px;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .tabs {
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 20px;
+            }
+
+            .tab-button {
+                  background-color: #ffffff;
+                  border: 1px solid #ccc;
+                  padding: 10px 20px;
+                  cursor: pointer;
+                  border-radius: 8px 8px 0 0;
+                  font-weight: bold;
+                  color: #333;
+                  outline: none;
+            }
+
+            .tab-button.active {
+                  background-color: #2c3e50;
+                  color: #fff;
+                  border-bottom: none;
+            }
+
+            .tab-content {
+                  background-color: #ffffff;
+                  padding: 20px;
+                  border: 1px solid #ccc;
+                  border-radius: 0 0 8px 8px;
+            }
+
+            .issue {
+                  padding: 10px;
+                  border-bottom: 1px solid #ccc;
+                  display: flex;
+                  flex-direction: column;
+                  margin-bottom: 10px;
+            }
+
+            .issue:last-child {
+                  border-bottom: none;
+            }
+
+            .issue-header {
+                  display: flex;
+                  align-items: center;
+            }
+
+            .issue-icon {
+                  font-size: 24px;
+                  color: #ffcc00;
+                  margin-right: 10px;
+            }
+
+            .issue-title {
+                  font-size: 16px;
+                  font-weight: bold;
+                  color: #333;
+            }
+
+            .issue-date {
+                  font-size: 12px;
+                  color: #666;
+                  margin-top: 5px;
+                  display: flex;
+                  align-items: center;
+            }
+
+            .issue-date::before {
+                  content: '⏰';
+                  margin-right: 5px;
+            }
+
+            .view-more {
+                  text-align: right;
+                  margin-top: 10px;
+            }
+
+            .view-more a {
+                  color: #2c3e50;
+                  text-decoration: none;
+                  font-weight: bold;
+            }
+
+            .view-more a:hover {
+                  text-decoration: underline;
+            }
+
+
+            .content {
+                  display: flex;
+                  gap: 20px;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh;
+                  /* background-color: #f8f8f8; */
+
+            }
+
+            .column {
+                  background-color: #fff;
+                  border-radius: 10px;
+                  padding: 20px;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                  width: 300px;
+                  text-align: center;
+            }
+
+            .electors {
+                  background-color: #ffe6eb;
+            }
+
+            .political-party {
+                  background-color: #e0f7fa;
+            }
+
+            .eci-officials {
+                  background-color: #ffe6eb;
+            }
+
+            .mainh2 {
+                  margin-bottom: 20px;
+            }
+
+            .maina {
+                  display: block;
+                  margin: 10px 0;
+                  color: #000;
+                  text-decoration: none;
+                  padding: 10px;
+                  border: 1px solid transparent;
+                  border-radius: 5px;
+                  transition: 0.3s;
+            }
+
+            .maina:hover {
+                  background-color: #f0f0f0;
+                  border-color: #ccc;
+            }
+
+            .mainbutton {
+                  background-color: #00b0ff;
+                  color: #fff;
+                  padding: 10px 20px;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  margin-top: 20px;
+                  transition: 0.3s;
+            }
+
+            .mainbutton:hover {
+                  background-color: #007bb5;
+            }
+
+            * {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                  font-family: Arial, sans-serif;
+            }
+
+            .container_2 {
+                  width: 90%;
+                  max-width: 1200px;
+                  text-align: center;
+                  margin: auto;
+            }
+
+            .container_2 h1 {
+                  margin-bottom: 20px;
+                  font-family: Arial, sans-serif;
+            }
+
+            .content_2 {
+                  display: flex;
+                  justify-content: space-between;
+            }
+
+            .map {
+                  width: 50%;
+            }
+
+            .map img {
+                  width: 100%;
+                  border-radius: 10px;
+            }
+
+            .elections {
+                  width: 45%;
+                  background-color: #0d1b3f;
+                  border-radius: 10px;
+                  padding: 20px;
+                  color: #fff;
+                  text-align: left;
+                  font-family: Arial, sans-serif;
+            }
+
+            .elections h2 {
+                  border-bottom: 2px solid #00b0ff;
+                  padding-bottom: 10px;
+                  margin-bottom: 20px;
+            }
+
+            .elections a {
+                  display: block;
+                  margin: 10px 0;
+                  padding: 10px;
+                  border-radius: 5px;
+                  text-decoration: none;
+                  color: #000;
+                  background-color: #fff;
+                  text-align: center;
+                  transition: 0.3s;
+            }
+
+            .current-elections a:nth-child(2),
+            .previous-elections a:nth-child(2) {
+                  background-color: #f2e8df;
+            }
+
+            .current-elections a:nth-child(3),
+            .previous-elections a:nth-child(3) {
+                  background-color: #e0f7fa;
+            }
+
+            .current-elections a:nth-child(4),
+            .previous-elections a:nth-child(4) {
+                  background-color: #e0f4e8;
+            }
+
+            .current-elections a:nth-child(5),
+            .previous-elections a:nth-child(5) {
+                  background-color: #f2e0f4;
+            }
+
+            .current-elections a:nth-child(6),
+            .previous-elections a:nth-child(6) {
+                  background-color: #e0eaf2;
+            }
+
+            .elections a:hover {
+                  background-color: #ccc;
+            }
+
+            .sveep-section {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  background-color: #0d1b3f;
+                  color: white;
+                  border-radius: 20px;
+                  padding: 20px;
+                  margin: 20px;
+            }
+
+            .sveep-content {
+                  max-width: 50%;
+            }
+
+            .sveep-logo {
+                  display: block;
+                  margin-bottom: 20px;
+            }
+
+            .sveep-content h2 {
+                  font-size: 24px;
+                  margin-bottom: 10px;
+            }
+
+            .sveep-content p {
+                  font-size: 16px;
+                  line-height: 1.5;
+            }
+
+            .sveep-images {
+                  display: flex;
+                  justify-content: space-around;
+                  max-width: 45%;
+            }
+
+            .sveep-image {
+                  width: 45%;
+                  margin: 0 10px;
+                  border-radius: 10px;
+            }
+
+            .sveep-images img:first-child {
+                  transform: rotate(0deg);
+            }
+
+            .sveep-images img:last-child {
+                  transform: rotate(0deg);
+            }
+
+            .sveep-images:before,
+            .sveep-images:after {
+                  content: '';
+                  display: block;
+                  width: 40px;
+                  height: 5px;
+                  background-color: #f26522;
+                  margin: 0 5px;
+            }
+
+            .sveep-images:after {
+                  background-color: #ffdd00;
+            }
+
+            .footer {
+                  background-color: #072146;
+                  color: white;
+                  padding: 40px 20px;
+            }
+
+            .footer-section {
+                  display: flex;
+                  justify-content: space-between;
+                  flex-wrap: wrap;
+            }
+
+            .footer-box {
+                  flex: 1;
+                  padding: 20px;
+                  min-width: 300px;
+            }
+
+            .footer-box h3 {
+                  margin-bottom: 20px;
+                  color: #00aaff;
+                  border-bottom: 2px solid #00aaff;
+                  padding-bottom: 10px;
+            }
+
+            .footer-box p {
+                  margin: 10px 0;
+            }
+
+            .footer-box img {
+                  max-width: 100%;
+                  margin: 20px 0;
+            }
+
+            .footer-box ul {
+                  list-style: none;
+                  padding: 0;
+            }
+
+            .footer-box ul li {
+                  margin: 10px 0;
+            }
+
+            .app-icons {
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 20px;
+            }
+
+            .app-icon {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  /* font-size: 36px;
+                  background-color: white;
+                  color: #072146; */
+                  padding: 10px;
+                  /* border-radius: 8px; */
+                  cursor: pointer;
+            }
+
+            .app-icon:hover{
+                  scale: 0.9;
+            }
+
+
+            .footer-bottom {
+                  text-align: center;
+                  margin-top: 20px;
+                  border-top: 1px solid #00aaff;
+                  padding-top: 20px;
+            }
+
+            .social-media {
+                  display: flex;
+                  justify-content: center;
+                  gap: 20px;
+                  margin-bottom: 20px;
+            }
+
+            .social-media i {
+                  font-size: 24px;
+                  color: #ffffffb9;
+                  font-weight: 400;
+                  cursor: pointer;
+            }
+
+            .social-media i:hover {
+                  color: #fff;
+            }
+
+
+
+            @media (max-width: 768px) {
+                  .info-container {
+                        flex-direction: column;
+                        align-items: center;
+                  }
+
+                  .info-box {
+                        width: 80%;
+                        margin-bottom: 10px;
+                  }
+            }
+
+
+            @media (max-width: 768px) {
+                  .nav-items {
+                        display: none;
+                  }
+            }
+      </style>
+</head>
+
+<body>
+      <!-- This is header part -->
+      <header>
+            <nav class="navbar">
+                  <div class="menu-icon">
+                        <span class="icon">&#9776;</span><span style="font-size: 1.5rem;">Menu</span>
+                  </div>
+                  <div class="nav-items">
+                        <a href="#" class="social-icons" style="padding-right: 0.8rem;"><i class="fa fa-home"></i></a>|
+                        <a href="#" class="social-icons"><i class="fa fa-phone"></i></a>
+                        <span style="padding-left: 0.5rem;"> Toll Free - 1950 |</span>
+                        <a href="#" class="social-icons"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icons"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icons"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" class="social-icons"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#">| <span class="tet">Screen Reader Access</span> |</a>
+                        <a href="#" style="padding-left: 0;margin-left: 5px;"><span class="tet"
+                                    style="padding-left: 0;margin-left: 0;">Skip to Main Content</span> |</a>
+                        <button class="text-size">A+</button>
+                        <button class="text-size">A-</button>
+                        <button class="language">हिंदी में देखें</button>
+                  </div>
+            </nav>
+      </header>
+      <!-- Now this is logo part -->
+      <div class="banner">
+            <div class="logo-section" style="padding-left: 2rem;">
+                  <img src="images/eci-logo.svg" alt="Election Commission of India Logo">
+                  <!-- <div class="text-section">
+                        <span class="hindi-text">भारत निर्वाचन आयोग</span>
+                        <span class="english-text">Election Commission of India</span>
+                  </div> -->
+            </div>
+            <div class="search-section" style="padding-right: 3rem;">
+                  <button class="search-button">
+                        <i class="fa fa-search"></i>
+                  </button>
+            </div>
+      </div>
+      <!-- this is an sliding image -->
+      <div id="carouselExampleAutoplaying" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="4"
+                        aria-label="Slide 5"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="5"
+                        aria-label="Slide 6"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="6"
+                        aria-label="Slide 7"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="7"
+                        aria-label="Slide 8"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="8"
+                        aria-label="Slide 9"></button>
+            </div>
+            <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="images/Nvd2024.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="2000">
+                        <img src="images/YqRDeYJ5syZPMet1709025023.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="3000">
+                        <img src="images/uul480sKd4ZS3K21717755951.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="4000">
+                        <img src="images/rTNCeHAmUkbF6Zl1716792121.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="5000">
+                        <img src="images/2rEFXb3Z7BOAx6G1706514283.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="6000">
+                        <img src="images/7kRVa1rQoKU0L8r1697441759.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="7000">
+                        <img src="images/aFPuV11LHpXONMT1720008891.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="8000">
+                        <img src="images/BBwS771whMA8iBW1717755889.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="9000">
+                        <img src="images/cGrGlk3na6SD9mN1717683100.jpg" class="d-block w-100" alt="...">
+                  </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+            </button>
+      </div>
+
+      <div class="info-container">
+            <div class="info-box">
+                  <i class="fas fa-users"></i>
+                  <span>Myth Vs Reality</span>
+            </div>
+            <div class="info-box">
+                  <span>2024 Election Updates</span>
+            </div>
+            <div class="info-box">
+                  <span>General Election Results 2024</span>
+            </div>
+            <div class="info-box">
+                  <span>General Election : Photo Gallery</span>
+            </div>
+            <div class="info-box">
+                  <i class="fas fa-newspaper"></i>
+                  <span>Press Releases</span>
+            </div>
+      </div>
+
+      <!-- new part diff -->
+
+      <div class="timeline">
+            <div class="timeline-item">
+                  <div class="icon-circle" style="border:10px solid #5bbebc;">
+                        <img src="images/voter-services.png" alt="Electors">
+                  </div>
+                  <h3>Electors</h3>
+                  <div class="arrow-down"></div>
+            </div>
+            <div class="timeline-item">
+                  <div class="icon-circle" style="border:10px solid #ab52bc;">
+                        <img src="images/candidate-polparty.png" alt="Political Parties/Candidates">
+                  </div>
+                  <h3>Political Parties/Candidates</h3>
+                  <div class="arrow-down"></div>
+            </div>
+            <div class="timeline-item">
+                  <div class="icon-circle" style="border:10px solid #ed5553;">
+                        <img src="images/election.png" alt="Election Management">
+                  </div>
+                  <h3>Election Management</h3>
+                  <div class="arrow-down"></div>
+            </div>
+            <div class="timeline-item">
+                  <div class="icon-circle" style="border:10px solid #4f9ed4;">
+                        <img src="images/publication.png" alt="Media & Publications">
+                  </div>
+                  <h3>Media & Publications</h3>
+                  <div class="arrow-down"></div>
+            </div>
+            <div class="timeline-item">
+                  <div class="icon-circle" style="border:10px solid #f19c23;">
+                        <img src="images/voter-education.png" alt="Voter Education">
+                  </div>
+                  <h3>Voter Education</h3>
+                  <div class="arrow-down"></div>
+            </div>
+            <div class="timeline-item">
+                  <div class="icon-circle" style="border:10px solid #e57020;">
+                        <img src="images/ict-apps.png" alt="ICT APPS">
+                  </div>
+                  <h3>ICT APPS</h3>
+                  <div class="arrow-down"></div>
+            </div>
+      </div>
+
+      <!-- this is Gallery section -->
+      <!-- <div class="container">
+            <div class="commission-section">
+                  <h2>HON'BLE COMMISSION</h2>
+                  <div class="commissioner">
+                        <img src="images/ec-rk.jpg" alt="Shri Rajiv Kumar">
+                        <div class="info">
+                              <h3>Shri Rajiv Kumar</h3>
+                              <p>Chief Election Commissioner</p>
+                        </div>
+                  </div>
+                  <div class="commissioner">
+                        <img src="images/EC-Shri-Gyanesh-Kumar.jpg" alt="Shri Gyanesh Kumar">
+                        <div class="info">
+                              <h3>Shri Gyanesh Kumar</h3>
+                              <p>Election Commissioner</p>
+                        </div>
+                  </div>
+                  <div class="commissioner">
+                        <img src="images/EC-Dr-Sukhbir-Singh-Sandhu.jpg" alt="Dr Sukhbir Singh Sandhu">
+                        <div class="info">
+                              <h3>Dr Sukhbir Singh Sandhu</h3>
+                              <p>Election Commissioner</p>
+                        </div>
+                  </div>
+            </div>
+            <div class="gallery-section">
+                  <div class="photo-gallery">
+                        <h2>Photo Gallery</h2>
+                        <div class="photos">
+                              <img src="images/1.jpg" alt="Photo 1">
+                              <img src="images/2.jpg" alt="Photo 2">
+                              <img src="images/3.jpg" alt="Photo 3">
+                              <img src="images/4.jpg" alt="Photo 4">
+                              <img src="images/5.jpg" alt="Photo 5">
+                               <img src="images/1.jpg" alt="Photo 6"> 
+                        </div>
+                        <a href="#" class="gallery-link">Photo Gallery &rarr;</a>
+                  </div>
+                  <div class="video-gallery">
+                        <h2>Video Gallery</h2>
+                        <img src="path/to/video_thumbnail.jpg" alt="Video Thumbnail">
+                        <a href="#" class="gallery-link">Video Gallery &rarr;</a>
+                  </div>
+            </div>
+      </div> -->
+      <!-- this is current issues section -->
+      <div class="container">
+            <div class="tabs">
+                  <button class="tab-button active">Current Issues</button>
+                  <button class="tab-button">Press Releases</button>
+                  <button class="tab-button">Instructions</button>
+                  <button class="tab-button">Tender & Vacancies</button>
+                  <button class="tab-button">Election Stories</button>
+            </div>
+            <div class="tab-content">
+                  <div class="issue">
+                        <div class="issue-header">
+                              <div class="issue-icon">&#x2714;</div>
+                              <div class="issue-title">2nd Special Summary Revision of Photo Electoral Rolls w.r.t.
+                                    01.07.2024 as the qualifying date</div>
+                        </div>
+                        <div class="issue-date">Friday 28 Jun 2024, 4:52 PM</div>
+                  </div>
+                  <div class="issue">
+                        <div class="issue-header">
+                              <div class="issue-icon">&#x2714;</div>
+                              <div class="issue-title">Special Summary Revision of Photo Electoral Rolls w.r.t.
+                                    01.07.2024 as the qualifying date - Appointment of Roll Observer</div>
+                        </div>
+                        <div class="issue-date">Friday 28 Jun 2024, 4:51 PM</div>
+                  </div>
+                  <div class="issue">
+                        <div class="issue-header">
+                              <div class="issue-icon">&#x2714;</div>
+                              <div class="issue-title">2nd Summary Revision of Last Part of Electoral Roll relating to
+                                    service electors with reference to 1.07.2024 as qualifying date in 4 States</div>
+                        </div>
+                        <div class="issue-date">Friday 28 Jun 2024, 4:45 PM</div>
+                  </div>
+                  <div class="issue">
+                        <div class="issue-header">
+                              <div class="issue-icon">&#x2714;</div>
+                              <div class="issue-title">2nd Special Summary Revision of Photo Electoral Rolls w.r.t.
+                                    01.07.2024 as the qualifying date - Posting of adequate staff to fill up vacancies
+                                    and ban on transfers/posting - regarding.</div>
+                        </div>
+                        <div class="issue-date">Friday 28 Jun 2024, 4:33 PM</div>
+                  </div>
+                  <div class="issue">
+                        <div class="issue-header">
+                              <div class="issue-icon">&#x2714;</div>
+                              <div class="issue-title">EC kicks off updation of Electoral Rolls for Haryana, Jharkhand,
+                                    Maharashtra & Jammu and Kashmir</div>
+                        </div>
+                        <div class="issue-date">Friday 21 Jun 2024, 11:58 AM</div>
+                  </div>
+            </div>
+            <div class="view-more">
+                  <a href="#">View More &rarr;</a>
+            </div>
+      </div>
+      <!-- section -->
+      <div class="content">
+            <div class="column electors">
+                  <h2 class="mainh2">Electors</h2>
+                  <a href="#" class="maina">Register Now To Vote</a>
+                  <a href="#" class="maina">Check Application Status</a>
+                  <a href="#" class="maina">Know Your Polling Booth</a>
+                  <a href="#" class="maina">Search Name in Voter list</a>
+                  <a href="#" class="maina">Register Complaint</a>
+                  <button class="mainbutton">Know More</button>
+            </div>
+            <div class="column political-party">
+                  <h2 class="mainh2">Political Party/Candidate</h2>
+                  <a href="#" class="maina">New Party Registration</a>
+                  <a href="#" class="maina">Election Symbol Allotment</a>
+                  <a href="#" class="maina">Nomination</a>
+                  <a href="#" class="maina">e-Affidavit</a>
+                  <a href="#" class="maina">Permission</a>
+                  <button class="mainbutton">Know More</button>
+            </div>
+            <div class="column eci-officials">
+                  <h2 class="mainh2">ECI Officials</h2>
+                  <a href="#" class="maina">Handbooks/Manuals/Checklist</a>
+                  <a href="#" class="maina">Compendium of Instructions</a>
+                  <a href="#" class="maina">Postal Ballots</a>
+                  <a href="#" class="maina">Service Voter Portal</a>
+                  <a href="#" class="maina">Observer Portal</a>
+                  <button class="mainbutton">Know More</button>
+            </div>
+      </div>
+      <!-- Loksabha general election -->
+      <div class="container_2">
+            <h1>Visit Our State CEO's Website to Get State Specific Information & Updates</h1>
+            <div class="content_2">
+                  <div class="map">
+                        <img src="images/map.jpg" alt="Map of India">
+                  </div>
+                  <div class="elections">
+                        <div class="current-elections">
+                              <h2>Current Elections</h2>
+                              <a href="#">General Elections to Lok Sabha 2024</a>
+                              <a href="#">Andhra Pradesh</a>
+                              <a href="#">Arunachal Pradesh</a>
+                              <a href="#">Odisha</a>
+                              <a href="#">Sikkim</a>
+                              <a href="#">Bye Elections</a>
+                        </div>
+                        <div class="previous-elections">
+                              <h2>Previous Elections</h2>
+                              <a href="#">Presidential Elections</a>
+                              <a href="#">Vice-Presidential Elections</a>
+                              <a href="#">Lok-Sabha Elections</a>
+                              <a href="#">Assembly Elections</a>
+                              <a href="#">Bye Elections</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <!-- Story -->
+      <div class="sveep-section">
+            <div class="sveep-content">
+                  <img src="images/Sveep-logo-01.png" alt="SVEEP Logo" class="sveep-logo">
+                  <h2>Systematic Voters' Education and Electoral Participation</h2>
+                  <p>
+                        Systematic Voters’ Education and Electoral Participation program, better known as SVEEP, is the
+                        flagship program of the Election Commission of India for voter education, spreading voter
+                        awareness and promoting voter literacy in India. Since 2009, we have been working towards
+                        preparing India’s electors and equipping them with basic knowledge related to the electoral
+                        process.
+                  </p>
+            </div>
+            <div class="sveep-images">
+                  <img src="images/sachin-01.png" alt="Person 1" class="sveep-image">
+                  <img src="images/raj-01.png" alt="Person 2" class="sveep-image">
+            </div>
+      </div>
+
+      <!-- footer section -->
+      <footer class="footer">
+            <div class="footer-section">
+                  <div class="footer-box">
+                        <h3>Election Commission of India</h3>
+                        <p>The Election Commission of India is an autonomous constitutional authority responsible for
+                              administering election processes in India. The body administers elections to the Lok
+                              Sabha, Rajya Sabha, State Legislative Assemblies in India, and the offices of the
+                              President and Vice President in the country.</p>
+                        <img src="images/Election-commission-L.png" alt="Election Commission of India Logo">
+                        <p><i class="fas fa-map-marker-alt"></i> Nirvachan Sadan, Ashoka Road, New Delhi 110001</p>
+                  </div>
+                  <div class="footer-box" >
+                        <img src="images/ticket-24.png" alt="">
+                  </div>
+                  <div class="footer-box">
+                        <h3>Quick Links</h3>
+                        <ul>
+                              <li>About ECI</li>
+                              <li>Officers Directory</li>
+                              <li>Contact Us</li>
+                              <li>Public Grievance</li>
+                              <li>RTI Online</li>
+                              <li>eOffice</li>
+                              <li>Apply for Voter Card</li>
+                              <li>SVEEP</li>
+                              <li>Service Voter Portal</li>
+                              <li>Download cVIGIL</li>
+                              <li>Candidate Affidavits</li>
+                              <li>International Cooperation</li>
+                              <li>India A-WEB Centre</li>
+                              <li>VoiceNet</li>
+                              <li>MCC Cases</li>
+                              <li>Political Parties Registration</li>
+                        </ul>
+                  </div>
+                  <div class="footer-box">
+                        <h3>ECI Apps Links</h3>
+                        <div class="app-icons">
+                              <div class="app-icon"><img src="images/voter-helpline.png" alt=""></i></div>
+                              <div class="app-icon"><img src="images/saksham-eci.png" alt=""></div>
+                              <div class="app-icon"><img src="images/kyc-eci.png" alt=""></div>
+                              <div class="app-icon"><img src="images/cVigil.png" alt=""></i></div>
+                        </div>
+                  </div>
+            </div>
+            <div class="footer-bottom">
+                  <div class="social-media">
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-youtube"></i>
+                  </div>
+                  <p>&copy; Copyright Election Commission of India 2024</p>
+            </div>
+      </footer>
+</body>
+
+</html>

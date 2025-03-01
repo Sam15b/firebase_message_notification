@@ -1,0 +1,360 @@
+<!-- gallery.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            position: top;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            background-color: #e8f4fb;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+            /* Centering the container */
+            margin-top: 50px;
+            /* Adding some space at the top */
+        }
+
+        .profile-image img {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .profile-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .profile-details p {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .profile-details i {
+            margin-right: 10px;
+            color: #afa9a992;
+        }
+
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            /* width: 100%; */
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .rounded {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            width: 15%;
+            height: 45%;
+            margin: 5px;
+            box-sizing: border-box;
+            border: 2px solid;
+            border-radius: 5px;
+            box-shadow: 4px 7px 7px 0px #00000042;
+            cursor: pointer;
+            transition: 400ms;
+        }
+
+        .text-center {
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            padding: 5px;
+        }
+
+        .rounded:hover {
+            filter: grayscale(1);
+            transform: scale(1.03);
+        }
+
+        .popup-image {
+            position: fixed;
+            flex-wrap: nowrap;
+            top: 0;
+            left: 0;
+            padding-top: 0;
+            background: rgba(0, 0, 0, .9);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+            overflow: auto;
+            display: none;
+        }
+
+        .popup-image span {
+            position: absolute;
+            display: flex;
+            top: 0;
+            right: 10px;
+            font-size: 60px;
+            font-weight: bolder;
+            color: #fff;
+            cursor: pointer;
+            z-index: 100;
+        }
+
+        .popup-image img {
+            position: absolute;
+            top: 100%;
+            bottom: 100%;
+            left: 50%;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            transform: translate(-50%, -50%);
+            border: 5px solid #fff;
+            border-radius: 5px;
+            width: 750px;
+            object-fit: cover;
+        }
+
+        .popup-image span:hover {
+            color: #dcdcdc;
+        }
+
+        .mySlides {
+            display: block;
+        }
+
+        .card {
+            background-color: #7f7d7db2;
+            /*     border:1px solid #e0e0e0; */
+            box-shadow: 1.95px 1.95px 2.6px;
+            border-radius: 10px;
+            margin: 2.5rem;
+            /*     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+            padding: 20px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+
+        .card h2 {
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .features {
+            list-style-type: none;
+            padding: 20px;
+            margin: 0 0 20px 0;
+            text-align: left;
+        }
+
+        .features li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+        }
+
+        .features li:before {
+            content: '✅';
+            margin-right: 10px;
+            color: #4caf50;
+        }
+
+        @media (max-width:768px) {
+            .popup-image img {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <h1>Validate Image</h1>
+    <div class="profile-container">
+        <div class="profile-image">
+            <img src="images/voter-helpline.png" alt="User Image">
+        </div>
+        <div class="profile-details">
+            <p><i class="fas fa-user"></i>Name: <%= Fname %>
+                    <%= Lname %>
+            </p>
+            <p><i class="fas fa-phone"></i> Phone: <%= Phone %>
+            </p>
+            <p><i class="fas fa-envelope"></i> Email: <%= Email %>
+            </p>
+            <p><i class="fas fa-address-card"></i> Aadhaar No: <%= AddharNumber %>
+            </p>
+            <p><i class="fas fa-calendar"></i> DOB: July 7, 1994</p>
+            <p><i class="fas fa-map-marker-alt"></i> Address: West Bengal, Kolkata</p>
+        </div>
+    </div>
+    <div class="text-center">
+        <% url.forEach((fileName, index)=> { %>
+            <img src="<%= fileName %>" class="rounded" alt="Image <%= index + 1 %>"
+                onclick="openModal(); currentSlide('<%= index + 1 %>')">
+            <% }); %>
+                <div class="popup-image" id="myModal">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <% url.forEach((fileName, index)=> { %>
+                        <div class="mySlides">
+                            <img src="<%= fileName %>" alt="Image <%= index + 1 %>">
+                        </div>
+                        <% }); %>
+                </div>
+    </div>
+    <div class="card">
+        <h2>Key Features to Validate the Image</h2>
+        <ul class="features">
+            <li>Check Throughouly Details of the User</li>
+            <li>Check the Details in the Addhar Card and Voter Id Card</li>
+            <li>Match Both of them with the given details</li>
+            <li>Then Choose Complete Or Reject from the details</li>
+            <!-- <li>Revenue Share</li>
+            <li>Classroom management (fee/attendance manually)</li> -->
+        </ul>
+    </div>
+    <footer>
+        <button class="button" onclick="button1Click('<%= url %>' ,'<%= AddharNumber %>')">Complete</button>
+        <button class="button" onclick="button2Click('<%= url %>' ,'<%= AddharNumber %>')">Reject</button>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = 'none';
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            const slides = document.querySelectorAll('.mySlides');
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            console.log(slideIndex)
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+
+            slides[slideIndex - 1].style.display = 'block';
+        }
+
+        function button1Click(url, AddharNumber) {
+            console.log("button1", url)
+            var S3fileName = [];
+
+            let file = url.split(',')[0]
+            console.log("file", file)
+            S3fileName.push(file)
+
+            let file1 = url.split(',')[1]
+            console.log("file1", file1)
+            S3fileName.push(file1)
+
+            let file2 = url.split(',')[2]
+            console.log("file2", file2)
+            S3fileName.push(file2)
+
+            let file3 = url.split(',').pop()
+            console.log("file3", file3)
+            S3fileName.push(file3)
+
+            console.log("url", S3fileName)
+
+            let DeleteUrl = []
+            S3fileName.forEach((fileName, index) => {
+                let url = fileName.split('?')[0];
+                let url1 = url.split('/').pop();
+                console.log(url1)
+                DeleteUrl.push(url1)
+            });
+            console.log(DeleteUrl)
+            let mes = "SsuccessS"
+            console.log(AddharNumber)
+            window.location.href = '/delete?DeleteUrl=' + DeleteUrl + mes + AddharNumber;
+
+            // Add your functionality for Button 1 here
+            alert('Button 1 clicked on ');
+        }
+
+        function button2Click(url) {
+
+            var urltest = document.getElementById('urlsID').value
+            console.log("button2", url)
+            // url.forEach((fileUrl, index) => {
+            //     let url = fileUrl.split('?')[0];
+            //     let url1 = url.split('/').pop();
+            //     console.log(url1)
+            //     S3fileName.push(url1)
+            // });
+            // console.log(S3fileName)
+
+            // window.location.href = '/delete' + S3fileName;
+
+            // Add your functionality for Button 2 here
+            alert('Button 2 clicked!');
+        }
+    </script>
+</body>
+
+</html>
